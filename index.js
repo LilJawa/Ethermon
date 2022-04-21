@@ -4,7 +4,7 @@ function Import(){
  	script.type = 'text/javascript';
  	script.src = 'https://cdn.rawgit.com/LilJawa/Ethermon/main/Scripts/Inject.js';   
  	script.onload = function() {
-  	Init();
+  	StartEthermon();
 	}; 
   	document.head.appendChild(script);
 }
