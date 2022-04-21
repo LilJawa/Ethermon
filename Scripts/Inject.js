@@ -10,11 +10,14 @@ var GUI = {
 }
 function StartEthermon(){
 	GUI.TitleFont = TitleFont();
+	GUI.TitleFont.load().then(function(font){ 
+	document.fonts.add(font);
     	CreateCanvas();
 	GUI.Canvas = document.getElementById('EthermonCanvas');
 	GUI.Context = GUI.Canvas.getContext('2d');
 	Draw();
 	window.scrollTo(0,-100);
+	});
 }
 function CreateCanvas(){
 	if (CanvasExists()) GUI.Canvas.remove();
@@ -25,8 +28,7 @@ function CreateCanvas(){
 	GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 }
 function TitleFont(){
-	var NewTitleFont = new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
-	return NewTitleFont;
+	return new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
 }
 function CanvasExists(){
 	GUI.Canvas = GUI.DOM.getElementById("EthermonCanvas");
