@@ -35,7 +35,7 @@ Lil Jawa
 
 ## License
 
-This project is licensed under the [Creative Commons Zero v1.0 Universal] License - see the LICENSE.md file for details
+This project is licensed under the [Creative Commons Zero v1.0 Universal](LICENSE.md) License - see the LICENSE.md file for details
 
 ## Acknowledgments
 

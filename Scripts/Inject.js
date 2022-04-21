@@ -25,7 +25,7 @@ function CreateCanvas(){
 	GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 }
 function TitleFont(){
-	return new FontFace('Font name', 'url(/path/to/font.ttf)');
+	return new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
 }
 function CanvasExists(){
 	GUI.Canvas = GUI.DOM.getElementById("EthermonCanvas");
