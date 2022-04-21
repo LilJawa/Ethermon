@@ -13,6 +13,7 @@ function StartEthermon(){
 	GUI.TitleFont.load().then(function(font){ 
 	console.log('Added Font');
 	console.log(font)
+	GUI.Context.font = font;
 	GUI.TitleFont = font;
 	document.fonts.add(font);
     	CreateCanvas();
