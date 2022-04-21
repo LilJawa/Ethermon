@@ -3,13 +3,13 @@ var Config = {
 } 
 var GUI = {
 	DOM: document,
-	Canvas: document.createElement(`canvas`),
+	Canvas: null,
 	Context: null
 }
 Init();
 //Import();
 function Init(){
-    	var GUI.Canvas = GUI.DOM.getElementById("canvasId");
+    	GUI.Canvas = GUI.DOM.getElementById("canvasId");
 	if (GUI.Canvas != undefined) GUI.Canvas.remove();
 	AddCanvas();
 	GUI.Canvas = document.getElementById('canvasId');
@@ -17,6 +17,7 @@ function Init(){
 	Draw();
 }
 function AddCanvas(){
+GUI.Canvas = GUI.DOM.createElement(`canvas`);
 GUI.Canvas.id = 'canvasId';
 GUI.Canvas.height = 200;
 GUI.Canvas.width = window.innerWidth;
@@ -25,7 +26,7 @@ GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 function Import(){
 	var script = document.createElement('script');
  	script.type = 'text/javascript';
- 	script.src = 'https://github.com/LilJawa/Ethermon/import.js';    
+ 	script.src = 'https://raw.githubusercontent.com/LilJawa/Ethermon/main/import.js';    
   	GUI.DOM.head.appendChild(script);
 }
 
