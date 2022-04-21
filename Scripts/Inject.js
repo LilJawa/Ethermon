@@ -12,8 +12,6 @@ function StartEthermon(){
 	GUI.TitleFont = TitleFont();
 	GUI.TitleFont.load().then(function(font){ 
 	console.log('Added Font');
-	console.log(font)
-	GUI.Context.font = font;
 	GUI.TitleFont = font;
 	document.fonts.add(font);
     	CreateCanvas();
@@ -45,7 +43,7 @@ function Draw() {
         requestAnimationFrame(Draw);
 }
 function DrawInfo() {
-        GUI.Context.font = GUI.TitleFont;
+        GUI.Context.font = "PokemonSolid";
         GUI.Context.fillStyle = "#0095DD";
         GUI.Context.fillText(Config.Title +" v"+Config.Version, 25, 60);
 }
