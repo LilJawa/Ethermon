@@ -9,7 +9,7 @@ var GUI = {
 	TitleFont: null
 }
 function StartEthermon(){
-	TitleFont();
+	GUI.TitleFont = TitleFont();
     	CreateCanvas();
 	GUI.Canvas = document.getElementById('EthermonCanvas');
 	GUI.Context = GUI.Canvas.getContext('2d');
@@ -25,11 +25,8 @@ function CreateCanvas(){
 	GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 }
 function TitleFont(){
-	GUI.TitleFont = new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
-	GUI.TitleFont.load().then(function(font){ 
-	document.fonts.add(font);
-	console.log('Font loaded');
-	});
+	var NewTitleFont = new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
+	return NewTitleFont;
 }
 function CanvasExists(){
 	GUI.Canvas = GUI.DOM.getElementById("EthermonCanvas");
@@ -41,7 +38,7 @@ function Draw() {
         requestAnimationFrame(Draw);
 }
 function DrawInfo() {
-        GUI.Context.font = "18px PokemonSolid";
+        GUI.Context.font = GUI.TitleFont;
         GUI.Context.fillStyle = "#0095DD";
         GUI.Context.fillText(Config.Title +" v"+Config.Version, 25, 60);
 }
