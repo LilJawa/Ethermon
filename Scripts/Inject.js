@@ -25,7 +25,11 @@ function CreateCanvas(){
 	GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 }
 function TitleFont(){
-	return new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
+	var PokemonFont = new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
+	PokemonFont.load().then(function(font){ 
+	document.fonts.add(font);
+	console.log('Font loaded');
+	});
 }
 function CanvasExists(){
 	GUI.Canvas = GUI.DOM.getElementById("EthermonCanvas");
