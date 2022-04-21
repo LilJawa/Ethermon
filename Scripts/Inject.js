@@ -43,7 +43,7 @@ function Draw() {
         requestAnimationFrame(Draw);
 }
 function DrawInfo() {
-        GUI.Context.font = "PokemonSolid";
+        GUI.Context.font = '32px PokemonSolid';
         GUI.Context.fillStyle = "#0095DD";
         GUI.Context.fillText(Config.Title +" v"+Config.Version, 25, 60);
 }
