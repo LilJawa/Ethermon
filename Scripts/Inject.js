@@ -11,6 +11,8 @@ var GUI = {
 function StartEthermon(){
 	GUI.TitleFont = TitleFont();
 	GUI.TitleFont.load().then(function(font){ 
+	console.log('Added Font');
+	console.log(font)
 	GUI.TitleFont = font;
 	document.fonts.add(font);
     	CreateCanvas();
@@ -29,6 +31,7 @@ function CreateCanvas(){
 	GUI.DOM.getElementById('play-wrapper').prepend(GUI.Canvas);
 }
 function TitleFont(){
+	console.log('Adding Font')
 	return new FontFace('PokemonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/main/Fonts/Pokemon_Solid.ttf)');
 }
 function CanvasExists(){
