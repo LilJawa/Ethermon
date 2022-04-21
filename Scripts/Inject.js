@@ -11,6 +11,7 @@ var GUI = {
 function StartEthermon(){
 	GUI.TitleFont = TitleFont();
 	GUI.TitleFont.load().then(function(font){ 
+	GUI.TitleFont = font;
 	document.fonts.add(font);
     	CreateCanvas();
 	GUI.Canvas = document.getElementById('EthermonCanvas');
