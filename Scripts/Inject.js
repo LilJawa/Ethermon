@@ -30,6 +30,8 @@ function CanvasExists(){
 }
 function Draw() {
     GUI.Context.clearRect(0, 0, GUI.Canvas.width, GUI.Canvas.height);
+	const fontAvailable = document.fonts.check("32px EthermonSolid");
+	if (fontAvailable)
     DrawInfo();
     requestAnimationFrame(Draw);
 }
