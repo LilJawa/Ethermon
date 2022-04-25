@@ -45,7 +45,7 @@ function DestroyObjects(Element){
 	DOM.getElementById('GameDescription').remove();
   }  
   function LoadFont(){
-	new FontFace('EthermonSolid', 'url(../Fonts/Pokemon_Solid.ttf)').load().then(function(font){ document.fonts.add(font); });
-	new FontFace('EthermonHollow', 'url(../Fonts/Pokemon_Hollow.ttf)').load().then(function(font){ document.fonts.add(font); });      
+	new FontFace('EthermonSolid', 'url(https://liljawa.github.io/Ethermon/Fonts/Pokemon_Solid.ttf)').load().then(function(font){ document.fonts.add(font); });
+	new FontFace('EthermonHollow', 'url(https://liljawa.github.io/Ethermon/Fonts/Pokemon_Hollow.ttf)').load().then(function(font){ document.fonts.add(font); });      
 }    
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
