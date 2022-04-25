@@ -9,8 +9,8 @@ var GUI = {
 	TitleFont: null
 }
 function StartEthermon(){
-	//'https://cdn.rawgit.com/LilJawa/Ethermon/main/Scripts/CSS/Ethermon.css'
-    	CreateCanvas();
+	LoadFont();
+    CreateCanvas();
 	GUI.Canvas = document.getElementById('EthermonCanvas');
 	GUI.Context = GUI.Canvas.getContext('2d');
 	Draw();
@@ -29,13 +29,23 @@ function CanvasExists(){
 	return GUI.Canvas != undefined;
 }
 function Draw() {
-        GUI.Context.clearRect(0, 0, GUI.Canvas.width, GUI.Canvas.height);
-        DrawInfo();
-        requestAnimationFrame(Draw);
+    GUI.Context.clearRect(0, 0, GUI.Canvas.width, GUI.Canvas.height);
+    DrawInfo();
+    requestAnimationFrame(Draw);
 }
 function DrawInfo() {
-        GUI.Context.font = '32px PokemonSolid';
-        GUI.Context.fillStyle = "#0095DD";
-        GUI.Context.fillText(Config.Title +" v"+Config.Version, 25, 60);
+    GUI.Context.font = '32px EthermonSolid';
+    GUI.Context.fillStyle = "#0095DD";
+    GUI.Context.fillText(Config.Title +" v"+Config.Version, 25, 60);
 }
+function DestroyObjects(Element){
+	DOM = document;
+	Element.remove(); 
+	DOM.getElementById('title').remove();
+	DOM.getElementById('GameDescription').remove();
+  }  
+  function LoadFont(){
+	new FontFace('EthermonSolid', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/blob/main/Fonts/Pokemon_Solid.ttf)').load().then(function(font){ document.fonts.add(font); });
+	new FontFace('EthermonHollow', 'url(https://cdn.rawgit.com/LilJawa/Ethermon/blob/main/Fonts/Pokemon_Hollow.ttf)').load().then(function(font){ document.fonts.add(font); });      
+}    
 function sleep(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
